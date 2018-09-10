@@ -1,0 +1,107 @@
+<body>
+   <h1>Biology Game</h1>
+    
+    <b>Points: </b>
+    <p id="pts"></p>
+    
+    
+    <b>Oil:</b>
+    <br>
+    This is the amount of oil you have drilled. After a couple seconds, it will be burned and covert to the next stage.
+    <p id="oil"></p>
+    
+    
+    <b>Carbon in Atmosphere:</b>
+    <br>
+    This is the amount of oil/carbon that has been burned, and is now in the atmosphere. After a few seconds, a tree will grow, using the carbon in the air. This requires at least 2.
+    <br>
+    <p id="atmosphere"></p>
+    
+    
+    
+      <b>Plants:</b>
+    <br>
+    Through the process of photosynthesis, carbon enters the plant. After a while, an animal will eat the plant, ingesting the carbon.
+    <br>
+    <p id="plants"></p>
+    
+    
+    <b>Animals:</b>
+    <br>
+    After eating the plant, the animal will ingest the carbon. After a while, the animal will return that carbon to the ground, creating oil, starting the cycle over again.
+    <br>
+    <p id="animals"></p>
+    
+    
+<button onClick="genOil()">Generate Oil</button>
+
+</body>
+<script>
+var oilAmount = 1
+var atmosphere = 1
+var points = 0
+var plants = 0
+var animals = 0
+setInterval(changeState1, 700);
+setInterval(changeState2, 3000);
+setInterval(changeState3, 14000);
+setInterval(changeState4, 20000);
+updateText()
+function genOil(){
+    oilAmount += 1
+    updateText()
+}
+function changeState1(){
+    if(oilAmount >= 2){
+        atmosphere +=1
+        points += 5
+        oilAmount -=1
+        updateText()
+        console.log("Oil > Atmosphere")
+    }
+    
+}
+    
+function changeState2(){
+    if(atmosphere >= 2){
+        plants +=1
+        points += 10
+        atmosphere -=2
+        updateText()
+        console.log("Atmosphere > Plants")
+    }
+    
+}   
+    
+function changeState3(){
+    
+    if(plants >= 2){
+        animals += 1
+        points += 15
+        plants -=2
+        updateText()
+        console.log("Plants > Animals")
+    }
+}
+    
+    function changeState4(){
+    
+    if(animals >= 1){
+       oil += 10
+        points += 30
+        animals -= 1
+        updateText()
+        console.log("Completed Cycle")
+        
+    }
+}
+    
+    function updateText(){
+         document.getElementById('oil').innerHTML = oilAmount
+         document.getElementById('atmosphere').innerHTML = atmosphere
+         document.getElementById('pts').innerHTML = points
+        document.getElementById('plants').innerHTML = plants
+        document.getElementById('animals').innerHTML = animals
+    }
+    
+</script>

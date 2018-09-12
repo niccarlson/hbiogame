@@ -1,5 +1,31 @@
 <!DOCTYPE html>
 <html>
+    <style>
+    
+    h1{
+    font-family: verdana;
+    color: darkblue;
+}
+b{
+    color: blue;
+    font-size: 18px;
+    font-family: verdana;
+}
+p{
+    color: darkblue;
+    font-family: verdana;
+}
+button{
+    background-color: darkblue;
+    color: lightyellow;
+    border-color: white;
+    font-size: 24px;
+}
+body{
+    background-color: lightyellow;
+    
+}
+    </style>
 <body>
    <h1>Biology Game</h1>
     
@@ -34,8 +60,9 @@
     <br>
     <p id="animals"></p>
     
-    
+    <center>
 <button onClick="genOil()">Generate Oil</button>
+        </center>
 
 </body>
 <script>
@@ -89,8 +116,8 @@ function changeState3(){
     function changeState4(){
     
     if(animals >= 1){
-       oil += 10
-        points += 30
+       oilAmount += 25
+        points += 50
         animals -= 1
         updateText()
         console.log("Completed Cycle")

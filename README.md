@@ -8,3 +8,9 @@
 
 
 **Check out the latest build at [niccarlson.github.io/hbiogame](niccarlson.github.io/hbiogame)**
+
+## Planned Features
+
+*Global Warming
+
+*Realistic and Game Modes (Auto-generation currently implemented)
